@@ -43,7 +43,7 @@ namespace BookStore.Models.Repo
         public void Update(int id, Author newAuthor)
         {
             var author = Find(id);
-            author.FullName = newAuthor.FullName
+            author.FullName = newAuthor.FullName;
         }
     }
 }

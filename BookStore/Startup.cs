@@ -27,7 +27,7 @@ namespace BookStore
         {
             services.AddControllersWithViews();
             services.AddMvc();
-            services.AddScoped<IBookstoreRepository<Author>, AuthorRepository>();
+            services.AddSingleton<IBookstoreRepository<Author>, AuthorRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
