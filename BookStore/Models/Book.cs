@@ -5,9 +5,10 @@ using System.Threading.Tasks;
 
 namespace BookStore.Models
 {
-    public class Author
+    public class Book
     {
         public int Id { get; set; }
-        public string FullName { get; set; }
+        public string Title { get; set; }
+        public string Description { get; set; }
     }
 }

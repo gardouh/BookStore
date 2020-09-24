@@ -6,21 +6,23 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using BookStore.Models;
+using BookStore.Models.Repo;
 
 namespace BookStore.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
+        private readonly IBookstoreRepository<Author> authorRepository;
+        public HomeController(IBookstoreRepository<Author> authorRepository)
         {
-            _logger = logger;
+            this.authorRepository = authorRepository;
         }
 
         public IActionResult Index()
         {
-            return View();
+            var authors = authorRepository.List();
+            return View(authors);
         }
 
         public IActionResult Privacy()
