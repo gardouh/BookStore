@@ -43,7 +43,7 @@ namespace BookStore.Models.Repo
 
         public void Delete(int id)
         {
-            throw new NotImplementedException();
+            books.Remove(Find(id));
         }
 
         public Book Find(int id)
@@ -56,10 +56,12 @@ namespace BookStore.Models.Repo
             return books;
         }
 
-        public void Update(int id, Book book)
+        public void Update(int id, Book newbook)
         {
             var book = Find(id);
-            book.FullName = newAuthor.FullName;
+            book.Title = newbook.Title;
+            book.Description = newbook.Description;
+            book.Author = newbook.Author;
         }
     }
 }
