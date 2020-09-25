@@ -28,6 +28,8 @@ namespace BookStore
             services.AddControllersWithViews();
             services.AddMvc();
             services.AddSingleton<IBookstoreRepository<Author>, AuthorRepository>();
+            services.AddSingleton<IBookstoreRepository<Book>, BookRepository>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
